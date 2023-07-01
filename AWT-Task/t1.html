@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <style>
+            .error-message {
+                color: red;
+                font-style: italic;
+                margin-left: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calculator By 21CE019</h1>
+        <div>
+            <label for="input1">First Number : </label>
+            <input type="text" id="input1">
+            <span id="input1-error" class="error-message"></span>
+            
+        </div>
+        <br>
+        <div>
+            <label for="input2">Second Number : </label>
+
+            <input type="text" id="input2">
+            <span id="input2-error" class="error-message"></span>
+        </div>
+        <br>
+        <div>
+            <button onclick="calculate('+')">Add</button>
+            <button onclick="calculate('-')">Subtract</button>
+            <button onclick="calculate('*')">Multiply</button>
+            <button onclick="calculate('/')">Divide</button>
+        </div>
+        <div>
+            <p>Result is : </p><input type="text" id="result" disabled>
+        </div>
+
+        <script src="app.js"></script>
+
+    </body>
+</html>

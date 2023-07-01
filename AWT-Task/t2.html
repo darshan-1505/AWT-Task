@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate</title>
+  </head>
+  <body>
+    <h1>Addition</h1>
+    <div>
+      <input
+        type="number"
+        id="num1"
+        onblur="calculateSum()"
+        placeholder="Enter number 1"
+      />
+    </div>
+    <br />
+    <div>
+      <input
+        type="number"
+        id="num2"
+        onblur="calculateSum()"
+        placeholder="Enter number 2"
+      />
+      <br />
+    </div>
+    <div id="result"></div>
+
+    <script>
+      function calculateSum() {
+        // Get the input values
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+
+        // Perform the addition
+        var sum = num1 + num2;
+
+        // Display the result
+        document.getElementById("result").innerHTML = "Sum: " + sum;
+
+        // Change the color of the result text
+        document.getElementById("result").style.color = "red";
+      }
+    </script>
+  </body>
+</html>
