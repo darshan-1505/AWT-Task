@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Signup Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(to right, #000000, #2f2c2c);
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+      }
+
+      form {
+        max-width: 510px;
+        margin: 5px auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      input[type="radio"] {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .gender-options {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .gender-options label {
+        margin-right: 20px;
+      }
+
+      .error {
+        color: red;
+        display: none;
+        margin-top: 5px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      input[type="submit"] {
+        background-color: #52a9dc;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #00aaaa;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Signup Form</h1>
+    <form name="signupForm" onsubmit="return validateForm()">
+      <div>
+        <label for="fullName">Full Name :</label>
+        <input type="text" id="fullName" name="fullName" required />
+        <span class="error" id="fullNameError" style="display: none"
+          >* Please enter your full name.</span
+        >
+      </div>
+
+      <div>
+        <label for="username">User Name :</label>
+        <input type="text" id="username" name="username" required />
+        <span class="error" id="usernameError" style="display: none"
+          >* Please enter a username.</span
+        >
+        <span class="error" id="usernameFormatError" style="display: none"
+          >* Username must be alphanumeric.</span
+        >
+      </div>
+
+      <div>
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password" required />
+        <span class="error" id="passwordError" style="display: none"
+          >* Please enter a password.</span
+        >
+        <span class="error" id="passwordFormatError" style="display: none"
+          >* Password must be 6-10 characters long, alphanumeric, and contain at
+          least one special symbol.</span
+        >
+      </div>
+
+      <div>
+        <label for="confirmPassword">Confirm Password :</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+        />
+        <span class="error" id="confirmPasswordError" style="display: none"
+          >* Passwords do not match.</span
+        >
+      </div>
+
+      <div>
+        <label>Gender :</label>
+        <div class="gender-options">
+          <label for="male">
+            <input type="radio" id="male" name="gender" value="male" />
+            Male
+          </label>
+          <label for="female">
+            <input type="radio" id="female" name="gender" value="female" />
+            Female
+          </label>
+        </div>
+        <span class="error" id="genderError" style="display: none"
+          >* Please select a gender.</span
+        >
+      </div>
+
+      <div>
+        <label for="phone">Phone Number:</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          pattern="[0-9]{10}"
+          required
+        />
+        <span class="error" id="phoneError" style="display: none"
+          >* Please enter a valid 10-digit phone number.</span
+        >
+      </div>
+
+      <div>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required />
+        <span class="error" id="emailError" style="display: none"
+          >* Please enter a valid email address.</span
+        >
+        <span class="error" id="emailFormatError" style="display: none"
+          >* Please enter a valid email address.</span
+        >
+      </div>
+
+      <div>
+        <label for="state">State :</label>
+        <select id="state" name="state" required>
+          <option value="">Select a state</option>
+          <option value="state1">Gujarat</option>
+          <option value="state2">Maharashtra</option>
+          <option value="state3">Madhya Pradesh</option>
+          <option value="state4">Uttar Pradesh</option>
+          <option value="state5">Rajasthan</option>
+        </select>
+        <span class="error" id="stateError" style="display: none"
+          >* Please select a state.</span
+        >
+      </div>
+
+      <div>
+        <input type="checkbox" id="agreement" name="agreement" required />
+        <label for="agreement">I agree to the terms and conditions.</label>
+        <span class="error" id="agreementError" style="display: none"
+          >* Please accept the agreement.</span
+        >
+      </div>
+
+      <div>
+        <input type="submit" value="Register" />
+      </div>
+    </form>
+
+    <script src="task-1.js"></script>
+  </body>
+</html>
